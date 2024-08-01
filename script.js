@@ -27,4 +27,20 @@ function initializeGrid(squaresPerSide) {
     }
 }
 
+function clearGrid() {
+    while (container.firstChild) {
+        container.removeChild(container.lastChild);
+    }
+}
+
 initializeGrid(16);
+
+const gridSizeButton = document.querySelector(".grid-size-button");
+gridSizeButton.addEventListener("click", () => {
+    const sizeFromUser = prompt("Enter a grid size (1-100): ");
+    const size = parseInt(sizeFromUser);
+    if (1 <= size && size <= 100) {
+        clearGrid();
+        initializeGrid(size);
+    }
+});
