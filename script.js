@@ -19,6 +19,9 @@ for (let i = 0; i < squares_per_side; i++) {
         gridDivs[i][j].style.height = `${square_width}px`;
         gridDivs[i][j].style.boxSizing = "border-box";
         gridDivs[i][j].style.border = "1px solid red";
+        gridDivs[i][j].addEventListener("mouseover", () => {
+            gridDivs[i][j].style.backgroundColor = "red";
+        });
         container.appendChild(gridDivs[i][j]);
     }
 }
