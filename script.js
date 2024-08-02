@@ -1,11 +1,25 @@
 const CONTAINER_WIDTH = 840;
 const DEFAULT_GRID_SIZE = 16;
 
+const HEX_VALUES = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                    'A', 'B', 'C', 'D', 'E', 'F'];
+
 const container = document.querySelector(".container");
 
 container.style.border = "1px solid black";
 container.style.width = `${CONTAINER_WIDTH}px`;
 container.style.height = `${CONTAINER_WIDTH}px`;
+
+function generateRandomColor() {
+    const colorValues = new Array(6);
+
+    for (let k = 0; k < 6; k++) {
+        colorValues[k] = HEX_VALUES[Math.floor(Math.random() * 16)];
+    }
+
+    return `#${colorValues.join("")}`;
+}
+
 
 function initializeGrid(squaresPerSide) {
     const squareWidth = Math.floor(CONTAINER_WIDTH / squaresPerSide);
@@ -25,7 +39,7 @@ function initializeGrid(squaresPerSide) {
             gridDivs[i][j].style.height = `${getWidth(i)}px`;
             gridDivs[i][j].style.boxSizing = "border-box";
             gridDivs[i][j].addEventListener("mouseover", () => {
-                gridDivs[i][j].style.backgroundColor = "red";
+                gridDivs[i][j].style.backgroundColor = generateRandomColor();
             });
             container.appendChild(gridDivs[i][j]);
         }
