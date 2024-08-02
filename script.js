@@ -23,7 +23,6 @@ function initializeGrid(squaresPerSide) {
             gridDivs[i][j].style.width = `${getWidth(j)}px`;
             gridDivs[i][j].style.height = `${getWidth(i)}px`;
             gridDivs[i][j].style.boxSizing = "border-box";
-            gridDivs[i][j].style.border = "1px solid red";
             gridDivs[i][j].addEventListener("mouseover", () => {
                 gridDivs[i][j].style.backgroundColor = "red";
             });
