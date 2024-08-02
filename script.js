@@ -1,4 +1,5 @@
 const CONTAINER_WIDTH = 840;
+const DEFAULT_GRID_SIZE = 16;
 
 const container = document.querySelector(".container");
 
@@ -37,7 +38,7 @@ function clearGrid() {
     }
 }
 
-initializeGrid(16);
+initializeGrid(DEFAULT_GRID_SIZE);
 
 const gridSizeButton = document.querySelector(".grid-size-button");
 gridSizeButton.addEventListener("click", () => {
